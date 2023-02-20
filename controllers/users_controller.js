@@ -27,31 +27,30 @@ module.exports.signIn = function(req, res){
 }
 
 // get the sign up data
-module.exports.create = function(req, res){
+module.exports.create = async function(req, res){
     // console.log(req.body);
-    if (req.body.password != req.body.confirm_password){
+    try {
+        if (req.body.password != req.body.confirm_password){
     
-        return res.redirect('back');
-    }
-
-    User.findOne({empid: req.body.empid}, function(err, user){
-        if(err){ return}
-
+            return res.redirect('back');
+        }
+    
+        const user =await User.findOne({empid: req.body.empid});
         if (!user){
             return res.redirect('back');
-           
+               
         }else{
             user.password = req.body.password;
-            user.save();
-            
-
-            return res.redirect('/users/sign_in');
-                
-        
-            
+            user.save();      
+            return res.redirect('/users/sign_in');           
         }
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+    
 
-    });
+    
 }
 
 

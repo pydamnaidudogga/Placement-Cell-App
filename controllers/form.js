@@ -1,5 +1,5 @@
 
-module.exports.view= async function(req,res){
+module.exports.view= function(req,res){
 
 
     return res.render('addingStudents')

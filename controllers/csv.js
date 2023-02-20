@@ -4,6 +4,7 @@ const Result = require('../models/results');
 const Interviews = require('../models/interviewsSchema');
 
 module.exports.export = async function(req, res) {
+  try {
     let result =[];
     
     const interviews = await Interviews.find({});
@@ -51,4 +52,10 @@ module.exports.export = async function(req, res) {
   // Return the CSV file as string:
 //   console.log(await csv.toString());
   return res.download('./results.csv');
+    
+  } catch (error) {
+    console.log(error);
+    return;
+  }
+    
  };

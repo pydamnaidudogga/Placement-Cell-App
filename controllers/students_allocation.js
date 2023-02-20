@@ -3,7 +3,8 @@ const Interviews = require('../models/interviewsSchema');
 const Result = require('../models/results');
 let temp ;
 module.exports.allocationForm = async function(req,res){
-    // console.log(req.params.id);
+    try {
+        // console.log(req.params.id);
     let temp1 = [];
     const id = req.params.id;
     const interviews = await Interviews.findById({_id:id});
@@ -24,15 +25,22 @@ module.exports.allocationForm = async function(req,res){
     return res.render('students_for_allocation',{
         students:temp1
     });
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+    
 } 
 module.exports.allocate = async function(req,res){
-    temp.students.push(req.params.id);
+    try {
+        temp.students.push(req.params.id);
     // console.log(req.params.id);
     // console.log(temp.students);
        temp.save();
        await Result.create({student:req.params.id,company:temp._id});
-
-      
+       return  res.redirect('back');
+    } catch (error) {
+        console.log(error);
+    }
     
-    return  res.redirect('back');
 }

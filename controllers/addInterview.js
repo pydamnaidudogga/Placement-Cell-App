@@ -1,9 +1,16 @@
 const interviews = require('../models/interviewsSchema');
 module.exports.addInterview = async function(req,res){
     //  creating  the interview
-    await interviews.create(req.body);
+    try {
+      await interviews.create(req.body);
+      return res.redirect("/interviews");
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+    
       // const interview = await interviews.find({})
 
-      return res.redirect("/interviews");
+      
 
 }

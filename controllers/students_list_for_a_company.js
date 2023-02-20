@@ -3,7 +3,8 @@ const Interviews = require('../models/interviewsSchema');
 const Result = require('../models/results');
 let req_interview ;
 module.exports.students = async function(req,res){
-    const interview = await Interviews.findById({_id:req.params.id});
+    try {
+        const interview = await Interviews.findById({_id:req.params.id});
     req_interview=interview;
     // const students = interview.students;
 
@@ -30,27 +31,34 @@ module.exports.students = async function(req,res){
     return res.render('list_of_all_students_for_company',{
         students:result
     });
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+    
 
 }
 
 module.exports.update = async function(req,res){
-    const ans = req.body.options;
-    const diff = ans.split('@');
-    const interview_id = req_interview._id;
-    const student_id = diff[1];
-    const option = diff[0];
-    const resultss = await Result.find({});
-    // console.log(result);
-    resultss.map((data)=>{
-        if(data.student.valueOf()==student_id&&data.company.valueOf()==interview_id.valueOf()){
-            data.result =option;
-            data.save();
-        }
+    try {
+        const ans = req.body.options;
+        const diff = ans.split('@');
+        const interview_id = req_interview._id;
+        const student_id = diff[1];
+        const option = diff[0];
+        const resultss = await Result.find({});
+        // console.log(result);
+        resultss.map((data)=>{
+           if(data.student.valueOf()==student_id&&data.company.valueOf()==interview_id.valueOf()){
+               data.result =option;
+               data.save();
+           }
 
-    });
-
+        });
+        return res.redirect('back');
+    } catch (error) {
+        console.log(error);
+        return;
+    }
     
-    
-
-    return res.redirect('back');
 }
