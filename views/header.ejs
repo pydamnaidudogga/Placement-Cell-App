@@ -1,0 +1,22 @@
+
+<div id="header">
+    <div id="header_bar">
+        <div id="header_bar_left_b">
+            <h2>PLACEMENT CELL</h2>
+        </div>
+        
+        <div id="header_bar_right_b">
+            <div><h3><a href="/viewForm">Add Employe</a></h3></div>
+            <% if(locals.user){%>
+            <div><h3><a href="/users/sign-out">sing out</a></h3></div>
+            <div><h3><%- locals.user.name %></h3></div>
+            <%}else{%>
+
+            <div><h3><a href="/users/sign_up">sing up</a></h3></div>
+            <div><h3><a href="/users/sign_in">sing in</a></h3></div>
+            <%}%>
+            
+            
+        </div>
+    </div>
+</div>

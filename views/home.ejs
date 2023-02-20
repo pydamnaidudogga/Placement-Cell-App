@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home_second_heading" >
+    <div class="display_flex home_head_leftpart">
+        <div><h4><a href="/interviews">INTERVIEWS</a></h4></div>
+    </div>
+    <div class="display_flex home_head_rightpart" >
+       <h4 style="margin-right: 10px;" ><a href="/exporttocsv">Result(CSV)</a></h4>
+       <h4 style="margin-right: 5px;" ><a href="/students/viewForm" id="add_std">ADD STUDENT</a> </h4>
+    </div>
+    
+</div>
+
+<div class="container">
+    <h5 style="margin: 4px;">STUDENT TABLE</h5>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th>Batch</th>
+          <th>Student Name</th>
+          <th>College Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Gender</th>
+          <th>Dsa</th>
+          <th>Web</th>
+          <th>React</th>
+          <th>Status</th>
+        <tr>  
+      </thead>
+      <tbody>
+        <% for(student of students){%>
+            <tr>
+                <td><%- student.batch %></td>
+                <td><%- student.name %></td>
+                <td><%- student.college %></td>
+                <td><%- student.email %></td>
+                <td><%- student.contact %></td>
+                <td><%- student.gender %></td>
+                <td><%- student.dsascore %></td>
+                <td><%- student.webscore %></td>
+                <td><%- student.reactscore %></td>
+                <td><%- student.status %></td>
+              </tr>
+        <%}%>
+        
+       
+      </tbody>
+     
+    </table>
+  </div>
+ 
+<script src="/js/home.js"></script>

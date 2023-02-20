@@ -1,0 +1,33 @@
+#home_second_heading{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+/* #home_second_heading div{
+    padding: 10px;
+} */
+.display_flex{
+    display: flex;
+}
+.home_head_leftpart div{
+    margin-left: 10%;
+    
+}
+
+#home_second_heading h4{
+    margin: 10% 0px 10% 0px;
+    
+}
+.home_head_rightpart h4{
+    margin-right: 5px;
+}
+.container th{
+    color: rgb(255, 255, 255);
+    text-align: start;
+    background-color: lightskyblue;
+    padding:10px ;
+}
+.container td{
+    padding: 10px;
+    background-color: lightblue;
+}

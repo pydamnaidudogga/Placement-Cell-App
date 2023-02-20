@@ -1,0 +1,30 @@
+
+#header{
+    background-color:lightblue;
+}
+#header_bar{
+    display: flex;
+    justify-content: space-between;
+}
+#header_bar_left_b{
+    display: flex;
+    justify-content:space-between ;
+}
+#header_bar_right_b{
+    display: flex;
+    justify-content: space-between;
+}
+#header_bar_right_b h3{
+    margin-right:20px ;
+}
+#header_bar_left_b div{
+    /* font-size: 1.4rem; */
+    /* padding: 10px; */
+    margin-left: 30px;
+}
+#header_bar_right_b{
+    /* font-size: 1.4rem; */
+    /* padding: 10px; */
+    margin-left: 30px;
+
+}

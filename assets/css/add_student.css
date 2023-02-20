@@ -1,0 +1,58 @@
+#add_student input{
+    padding: 8px;
+    margin-bottom:20px ;
+    /* margin-left: 10%; */
+}
+#add_student{
+    border: 2px solid orange;
+    /* width: 50%; */
+}
+#add_student span{
+    margin-left: 5%;
+}
+#add_student div{
+    margin-top: 20px;
+}
+#add_student select{
+    margin-bottom:20px ;
+    /* margin-left:10% ; */
+}
+#stu_dot{
+    display: inline-block;
+    margin-left:11% ;
+}
+#em_dot{
+    display: inline-block;
+    margin-left:16% ;
+}
+#mob_dot{
+    display:inline-block;
+    margin-left:10% ;
+}
+#ba_dot{
+    display: inline-block;
+    margin-left:15.7% ;
+}
+#gen_dot{
+    display: inline-block;
+    margin-left:15% ;
+}
+#ds_dot{
+    display: inline-block;
+    margin-left:17.4% ;
+}
+#we_dot{
+    display: inline-block;
+    margin-left:17.4% ;
+}
+#rea_dot{
+    display: inline-block;
+    margin-left:16% ;
+}
+#add_student button{
+    margin-left: 50%;
+    background-color: orange;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px;
+}

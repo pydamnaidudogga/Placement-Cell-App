@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/css/add_student.css">
+<div id="add_student">
+ <form action="/students/addStudent" method="post">
+    <div>
+      <span>STUDENT NAME  <div id="stu_dot">:</div>  </span>
+      <input type="text" name="name" placeholder="Enter student name" required>
+    </div>
+    <div>
+      <span>COLLEGE  <div id="em_dot">:</div></span>
+      <input required type="text" name="college" placeholder="Enter College name">
+    </div>
+    <div>
+      <span>EMAIL  <div id="em_dot">:</div></span>
+      <input required type="email" name="email" placeholder="Enter email">
+    </div>
+    <div>
+      <span>MOBILE NUMBER   <div id="mob_dot">:</div></span>
+      <input required type="number" name="contact" placeholder="Enter phone number">
+    </div>
+    <div>
+      <span>BATCH  <div id="ba_dot">:</div> </span>
+      <select name="batch" id="batch" required>
+        <option hidden value="">Select one</option>
+        <option value="Feb 21">Feb 21</option>
+        <option value="Aug 21">Aug 21</option>
+        <option value="Oct 21">Oct 21</option>
+        <option value="Jan 22">Jan 22</option>
+        <option value="Apr 22">Apr 22</option>
+        
+      </select>
+    </div>
+    <div>
+      <span>GENDER <div id="gen_dot">:</div> </span>
+      <select name="gender" id="gender" required>
+        <option hidden value="">Select one</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        
+      </select>
+    </div>
+    <div>
+    <span>STATUS <div id="gen_dot">:</div> </span>
+    <select name="status" id="status" required>
+      <option hidden value="">Select one</option>
+      <option value="placed">placed</option>
+      <option value="not_placed">not_placed</option>
+      
+    </select>
+    </div>
+    <div>
+      <span>DSA <div id="ds_dot">:</div></span>
+      <input required type="number" name="dsascore" placeholder="Dsa score">
+    </div>
+    <div>
+      <span>WEB  <div id="we_dot">:</div></span>
+      <input required type="number" name="webscore" placeholder="Web score">
+    </div>
+    <div>
+      <span>REACT <div id="rea_dot">:</div> </span>
+      <input required type="number" name="reactscore" placeholder="React score">
+    </div>
+   
+    <button type="submit">Add</button>
+ </form>
+</div>

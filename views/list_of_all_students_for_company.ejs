@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home_second_heading" >
+  <div class="display_flex home_head_leftpart">
+    <h4>
+      <a href="/interviews" id="add_std">
+        INTERVIEWS
+      </a>
+    </h4>
+    <!-- <div><h6>ALLOCATE STUDENTS FOR INTERVIEWS</h6></div> -->
+  </div>
+  <div>
+    <!-- <h4>
+      <a href="/interviews" id="add_std">
+        INTERVIEWS
+      </a>
+    </h4> -->
+  </div>
+    
+</div> 
+<div class="container">
+    <h5 style="margin: 3px; color: blue;">ALLOCATE STUDENTS FOR INTERVIEWS</h5>
+    
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th>STUDENT NAME</th>
+          <th>EMAIL</th>
+          <th>CONTACT</th>
+          <th>RESULT</th>
+          <th>STATUS</th>
+          
+        <tr>  
+      </thead>
+      <tbody>
+        <% for(student of students){%>
+          <tr>
+                
+            <td><%- student.name %></td>
+            <td><%- student.email %></td>
+            <td><%- student.contact %></td>
+            <form action="/interviews/student/update" method="post">
+            <td>
+              <select name="options" >
+                <option hidden value="">Select one</option>
+                <option value="Didn't Attempt@<%= student._id %>">DID'T ATTEMPT</option>
+                <option value="PASS@<%= student._id %>">PASS</option>
+                <option value="FAIL@<%= student._id %>">FAIL</option>
+                <option value="On Hold@<%= student._id %>">ON HOLD</option>
+
+              </select>
+            </td>
+            <td>
+              <%- student.status %>
+            </td>  
+            <td>
+              <button type="submit" >
+                UPDATE
+              </button>
+              
+            </td>
+            </form>
+                
+          </tr>
+        <%}%>
+        
+       
+      </tbody>
+     
+    </table>
+</div>
+
+ 
+<script src="/js/home.js"></script>

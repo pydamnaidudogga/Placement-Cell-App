@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home_second_heading" >
+  <div class="display_flex home_head_leftpart">
+    <div><h4><a href="/home">STUDENTS</a></h4></div>
+  </div>
+  <div>
+    <h4>
+      <a href="/interviews/viewForm" id="add_std">
+        ADD INTERVIEW
+      </a>
+    </h4>
+  </div>
+    
+</div>   
+
+<div class="container">
+  <h4 style="margin:5px ;" >INTERVIEWS TABLE</h4>
+  <table style="width: 100%;">
+    <thead>
+        <tr>
+          <th>COMPANY NAME</th>
+          <th>DATE</th>
+          <th>ALLOCATION</th>
+          
+        <tr>  
+    </thead>
+    <tbody>
+      <% for(interview of interview){%>
+        <tr>
+          <td><a href="/interviews/students/<%= interview.id %>"><%- interview.name %></a></td>
+          <td><%- interview.date %></td>
+          <td><a href="interviews/allocationForm/<%= interview.id %>"  >allocate student</a> </td>
+                
+        </tr>
+      <%}%>
+        
+       
+    </tbody>
+     
+  </table>
+</div>
+
+ 
+<script src="/js/home.js"></script>

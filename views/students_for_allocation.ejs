@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/home.css">
+<div id="home_second_heading" >
+  <div class="display_flex home_head_leftpart">
+    <h4>
+      <a href="/interviews" id="add_std">
+        INTERVIEWS
+      </a>
+    </h4>
+    <!-- <div><h6>ALLOCATE STUDENTS FOR INTERVIEWS</h6></div> -->
+  </div>
+  <div>
+   
+  </div>
+    
+</div> 
+<div class="container">
+    <h5 style="margin:3px; color: blue;">ALLOCATE STUDENTS FOR INTERVIEWS</h5>
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th>STUDENT NAME</th>
+          <th>EMAIL</th>
+          <th>CONTACT</th>
+          <th>ALLOCATE</th>
+          
+        <tr>  
+      </thead>
+      <tbody>
+        <% for(student of students){%>
+            <tr>
+                
+                <td><%- student.name %></td>
+                <td><%- student.email %></td>
+                <td><%- student.contact %></td>
+                <td><a href="/interviews/allocationSuccess/<%= student.id %>" >allocate</a> </td>
+                
+              </tr>
+        <%}%>
+        
+       
+      </tbody>
+     
+    </table>
+</div>
+
+ 
+<script src="/js/home.js"></script>

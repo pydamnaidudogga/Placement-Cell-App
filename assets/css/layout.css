@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    font-size: large;
+    
+}
+
+body #layout-main{
+    height: 78vh;
+    overflow: hidden;
+    overflow: scroll;
+    
+}
+#layout-main::-webkit-scrollbar{
+    display: none;
+}
+a{
+    color:brown;
+    text-decoration: none;
+}
