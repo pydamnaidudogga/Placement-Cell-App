@@ -12,7 +12,7 @@ passport.use(new LocalStratergy({
     },
     function(req, empid, password, done){
         // find a user and establish the identity
-        User.findOne({empid: empid},function(err,user){
+        User.findOne({empid: empid}).then((user,err)=>{
             if(err){
                 // req.flash('error', err);
                 return done(err);
@@ -34,7 +34,7 @@ passport.use(new LocalStratergy({
 
     //  deserializing the user from the key in the cookies
     passport.deserializeUser(function(id,done){
-        User.findById(id, function(err,user){
+        User.findById(id).then((user,err)=>{
         if(err){
             // console.log('Error in finding user --> passport');
             return done(err);
