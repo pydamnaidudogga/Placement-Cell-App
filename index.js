@@ -34,7 +34,7 @@ app.use(session({
           maxAge: (1000 * 60 * 100)
     },
     store: MongoStore.create({
-          mongoUrl:'mongodb+srv://pydamnaidu:wFkEtwmASsquWhOH@placementCell.cjh6ckr.mongodb.net/?retryWrites=true&w=majority',
+          mongoUrl:'mongodb+srv://pydamnaidu:f2SlFQdV6HqlaiBu@PlacementCell.cjh6ckr.mongodb.net/PlacementCell',
           autoRemove:'disabled'
     },
     function(err){
