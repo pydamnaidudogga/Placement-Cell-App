@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // const uri = 'mongodb://127.0.0.1/placement_cell';
-const uri = "mongodb+srv://pydamnaidu:D1OBXUD9rcUXnqwn@database.cjh6ckr.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://pydamnaidu:wFkEtwmASsquWhOH@placementCell.cjh6ckr.mongodb.net/?retryWrites=true&w=majority";
 mongoose.set('strictQuery',false);
 mongoose.connect(uri,{useNewUrlParser: true});
 const db = mongoose.connection;
